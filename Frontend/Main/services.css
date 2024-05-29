@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(104, 235, 104);
+    background-color: #092635;
+}
+
+/* Header styles */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999; /* Ensure the navbar is above other content */
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color:blue;
+}
+.logo h1:hover{
+    color:#fff;
+}
+
+.logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    background-color: #007bff;
+}
+
+nav ul li a:hover {
+    font-size: 20px;
+}
+
+
+
+.home {
+    background-image: url('../translate.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white; /* Text color */
+    margin: 0;
+    display: inline-block; /* Ensure the background covers only the size of the text */
+    background-color: rgb(98, 98, 232); /* Background color */
+    padding: 5px 10px; /* Add padding to increase the background area */
+}
+
+.hero-content h1 span {
+    display: inline-block;
+    animation: moveLetter 1s;
+}
+
+@keyframes moveLetter {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Add animation delay for each letter */
+.hero-content h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+.hero-content h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.hero-content h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.hero-content h1 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.hero-content h1 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.hero-content h1 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.hero-content h1 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.hero-content h1 span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.heading {
+    text-align: center; /* Align content to the center */
+}
+
+.heading h1,h2 {
+    width: 80%; /* Occupies 80% of the width */
+    margin: 0 auto; /* Centers the h1 horizontally */
+    font-weight: bold; /* Sets font weight to bold */
+    border-bottom: 2px solid green; /* Bottom border with green color */
+    padding-bottom: 10px; /* Space between text and border */
+}
+  
+
+/* Center align the content */
+.services {
+    text-align: center;
+    
+}
+
+/* Add some spacing below the paragraph */
+.services p {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: 150px;
+    color:aliceblue;
+}
+
+.translator {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.translator img {
+    width: 200px; /* Adjust the width of images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.translator h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold; /* Add bold font weight */
+    color: aliceblue; /* Text color */
+    opacity: 0; /* Initially hide the headings */
+    animation: fadeIn 1s ease forwards; /* Animation for fading in */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+.additional-section .language-translation-section {
+    text-align: center;
+    margin-left:35px;
+}
+
+.additional-section .language-translation-section img {
+    max-width: 100%;
+    height: auto; /* Ensure the image maintains aspect ratio */
+    display: block;
+    margin-bottom: 20px; /* Add some space below the image */
+    margin-left: 100px;
+}
+
+.additional-section .language-translation-section .translator-button {
+    width: 70%; /* Occupies 70% width */
+    padding: 12px 0;
+    font-size: 1rem;
+    background-color: transparent; /* Set background color to transparent */
+    color: #007bff; /* Set initial text color */
+    border: 2px solid #007bff; /* Set initial border color */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+.additional-section .language-translation-section .translator-button:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: #fff; 
+}
+
+
+
+
+
+.additional-section .sign-language-translation-section {
+    text-align: center;
+}
+
+.additional-section .sign-language-translation-section img {
+    width: 82%;
+    height: 400px;
+    display: block;
+    margin: 0 auto 10px; /* Add a bottom margin of 10px */
+}
+
+.additional-section .sign-language-translation-section .translator-button {
+    width: 70%; /* Occupies 70% width */
+    padding: 12px 0;
+    font-size: 1rem;
+    background-color: transparent; /* Set background color to transparent */
+    color: #007bff; /* Set initial text color */
+    border: 2px solid #007bff; /* Set initial border color */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+.additional-section .sign-language-translation-section .translator-button:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: #fff; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Apply styles to the footer */
+.footer {
+    background-color: #092635;
+    padding: 20px;
+}
+
+
+/* Style the social icons section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed for spacing */
+}
+
+/* Style the social icons */
+.social-icons a {
+    margin: 0 10px; /* Adjust margin as needed for spacing between icons */
+}
+
+.social-icons img {
+    width: 40px; /* Adjust the width of the icons as needed */
+    height: 30px; /* Adjust the height of the icons as needed */
+}
+
+footer p{
+    text-align: center;
+    padding-top:10px;
+}

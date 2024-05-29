@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translator</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Align items in a column */
+        }
+
+        #start-translation-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Add margin below the button */
+        }
+
+        #video-container {
+            position: relative;
+            max-width: 800px; /* Adjust as needed */
+        }
+
+        #video-feed {
+            width: 100%;
+            max-height: 400px; /* Adjust as needed */
+            margin-bottom: 20px; /* Add margin below the video */
+        }
+
+        #translation-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: none; /* Disable textarea resizing */
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Translation button -->
+    <button id="start-translation-btn">Start Translation</button>
+
+    <div id="video-container" style="display: none;">
+        <!-- Video feed from camera -->
+        <video id="video-feed" autoplay playsinline></video>
+
+        <!-- Text field for translated text -->
+        <textarea id="translation-field" rows="4" placeholder="Translated Text" readonly></textarea>
+    </div>
+
+    <!-- Include script for camera access and translation logic -->
+    <script>
+        // Get the Start Translation button element
+const startTranslationBtn = document.getElementById("start-translation-btn");
+
+// Function to start camera and display feed
+function startTranslation() {
+    // Get access to the camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+            // Display video container
+            const videoContainer = document.getElementById("video-container");
+            videoContainer.style.display = "block";
+
+            // Display camera feed in video element
+            const video = document.getElementById("video-feed");
+            video.srcObject = stream;
+
+            // Hide the Start Translation button
+            startTranslationBtn.style.display = "none";
+        })
+        .catch((error) => {
+            console.error("Error accessing camera:", error);
+            alert("Error accessing camera. Please allow camera access to use the translator.");
+        });
+}
+
+// Add click event listener to the Start Translation button
+startTranslationBtn.addEventListener("click", startTranslation);
+
+    </script>
+</body>
+</html>

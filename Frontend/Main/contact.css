@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(104, 235, 104);
+    background-color: #092635;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color:blue;
+}
+.logo h1:hover{
+    color:#fff;
+}
+
+.logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    background-color: #007bff;
+}
+
+nav ul li a:hover {
+    font-size: 20px;
+}
+
+
+
+.home {
+    background-image: url('../translate.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white; /* Text color */
+    margin: 0;
+    display: inline-block; /* Ensure the background covers only the size of the text */
+    background-color: rgb(98, 98, 232); /* Background color */
+    padding: 5px 10px; /* Add padding to increase the background area */
+}
+
+.hero-content h1 span {
+    display: inline-block;
+    animation: moveLetter 1s;
+}
+
+@keyframes moveLetter {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.hero-content h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+.hero-content h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.hero-content h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.hero-content h1 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.hero-content h1 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.hero-content h1 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.hero-content h1 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.hero-content h1 span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+
+
+.contact-form {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.contact h2{
+    text-align: center;
+    border-bottom: 2px solid green;
+    width: 80%;
+    padding-bottom: 10px; /* Adjust padding as needed */
+    margin: 0 auto; /* Center the heading */
+}
+
+.contact p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: aliceblue;
+    width: 70%; /* Set width to 70% */
+    margin-left: 15%; /* Center the paragraphs */
+    margin-right: 15%;
+}
+
+
+.contact p:first-child {
+    margin-top: 0; /* Remove top margin for the first paragraph */
+}
+
+.contact p:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+}
+
+ul {
+    width: 70%;
+    margin: 20px auto; /* Center the unordered list horizontally and add some space around it */
+    list-style-type: none;
+    animation: moveUpDown 2s infinite alternate; /* Apply continuous up-down movement */
+    margin-left:675px;
+}
+
+ul li strong {
+    font-weight: bold;
+    font-size: 18px; /* Increase the font size */
+    display: block; /* Ensure the strong tag takes up full width */
+}
+
+/* Keyframes for continuous up-down movement */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Adjust the value as needed */
+    }
+}
+
+
+.id {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.footer {
+    background-color: #092635;
+    padding: 20px;
+}
+
+
+/* Style the social icons section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed for spacing */
+}
+
+/* Style the social icons */
+.social-icons a {
+    margin: 0 10px; /* Adjust margin as needed for spacing between icons */
+}
+
+.social-icons img {
+    width: 40px; /* Adjust the width of the icons as needed */
+    height: 30px; /* Adjust the height of the icons as needed */
+}
+
+footer p{
+    text-align: center;
+    padding-top:10px;
+}

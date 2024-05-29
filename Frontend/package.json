@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@nlpjs/language": "^4.25.0",
+    "franc": "^6.2.0",
+    "python-shell": "^5.0.0",
+    "tesseract.js": "^5.0.5"
+  }
+}
